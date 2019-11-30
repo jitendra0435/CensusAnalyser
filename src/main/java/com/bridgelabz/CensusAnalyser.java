@@ -2,17 +2,17 @@ package com.bridgelabz;
 
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
-
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
+import java.util.InputMismatchException;
 import java.util.Iterator;
 
 public class CensusAnalyser {
 
-    private static final String SAMPLE_CSV_FILE_PATH = "/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCode.csv1";
+    private static final String SAMPLE_CSV_FILE_PATH = "/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCode.pdf";
 
     public int checkNumberOfRecords() throws IOException,CSVFileException{
 
@@ -43,13 +43,14 @@ public class CensusAnalyser {
 
             }
             catch(NoSuchFileException e){
-
                 throw new CSVFileException("No such File present",CSVFileException.ExceptionType.NO_SUCH_FILE);
-            }
-            catch (IOException e){
 
-                e.printStackTrace();
-            }
+            } catch ( RuntimeException e){
+                throw new CSVFileException("Incorrect File Type",CSVFileException.ExceptionType.INCORRECT_FILE_TYPE);
+
+            } catch (IOException e){
+               e.printStackTrace();
+          }
         return count;
     }
 }

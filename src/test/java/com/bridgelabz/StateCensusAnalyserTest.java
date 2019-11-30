@@ -13,8 +13,7 @@ public class StateCensusAnalyserTest {
         try {
             int getRecords = statesCensusAnalyzer.checkNumberOfRecords();
             Assert.assertEquals(37, getRecords);
-        }catch (CSVFileException e)
-        {
+        }catch (CSVFileException e) {
             e.printStackTrace();
         }
     }
@@ -23,9 +22,17 @@ public class StateCensusAnalyserTest {
         try {
             int getRecords = statesCensusAnalyzer.checkNumberOfRecords();
             Assert.assertEquals(37, getRecords);
-        }catch (CSVFileException e)
-        {
+        }catch (CSVFileException e) {
             e.printStackTrace();
         }
     }
-}
+    @Test
+    public void givenMethod_FoundInCorrectFileType_ThrowsException(){
+        try{
+            int getRecord=statesCensusAnalyzer.checkNumberOfRecords();
+            Assert.assertEquals(37,getRecord);
+        }catch(CSVFileException | IOException e){
+            e.printStackTrace();
+        }
+    }
+ }
