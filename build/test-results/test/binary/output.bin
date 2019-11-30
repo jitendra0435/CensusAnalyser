@@ -1,0 +1,185 @@
+SerialNumber :1
+'StateName :Andaman and Nicobar Islands
+TIN :35
+StateCode :AN
+%====================================
+SerialNumber :2
+StateName :Andhra Pradesh
+TIN :28
+StateCode :AP
+%====================================
+SerialNumber :3
+StateName :Andhra Pradesh New
+TIN :37
+StateCode :AD
+%====================================
+SerialNumber :4
+StateName :Arunachal Pradesh
+TIN :12
+StateCode :AR
+%====================================
+SerialNumber :5
+StateName :Assam
+TIN :18
+StateCode :AS
+%====================================
+SerialNumber :6
+StateName :Bihar
+TIN :10
+StateCode :BH
+%====================================
+SerialNumber :7
+StateName :Chandigarh
+TIN :04
+StateCode :CH
+%====================================
+SerialNumber :8
+StateName :Chattisgarh
+TIN :22
+StateCode :CT
+%====================================
+SerialNumber :9
+"StateName :Dadra and Nagar Haveli
+TIN :26
+StateCode :DN
+%====================================
+SerialNumber :10
+StateName :Daman and Diu
+TIN :25
+StateCode :DD
+%====================================
+SerialNumber :11
+StateName :Delhi
+TIN :07
+StateCode :DL
+%====================================
+SerialNumber :12
+StateName :Goa
+TIN :30
+StateCode :GA
+%====================================
+SerialNumber :13
+StateName :Gujarat
+TIN :24
+StateCode :GJ
+%====================================
+SerialNumber :14
+StateName :Haryana
+TIN :06
+StateCode :HR
+%====================================
+SerialNumber :15
+StateName :Himachal Pradesh
+TIN :02
+StateCode :HP
+%====================================
+SerialNumber :16
+StateName :Jammu and Kashmir
+TIN :01
+StateCode :JK
+%====================================
+SerialNumber :17
+StateName :Jharkhand
+TIN :20
+StateCode :JH
+%====================================
+SerialNumber :18
+StateName :Karnataka
+TIN :29
+StateCode :KA
+%====================================
+SerialNumber :19
+StateName :Kerala
+TIN :32
+StateCode :KL
+%====================================
+SerialNumber :20
+StateName :Lakshadweep Islands
+TIN :31
+StateCode :LD
+%====================================
+SerialNumber :21
+StateName :Madhya Pradesh
+TIN :23
+StateCode :MP
+%====================================
+SerialNumber :22
+StateName :Maharashtra
+TIN :27
+StateCode :MH
+%====================================
+SerialNumber :23
+StateName :Manipur
+TIN :14
+StateCode :MN
+%====================================
+SerialNumber :24
+StateName :Meghalaya
+TIN :17
+StateCode :ME
+%====================================
+SerialNumber :25
+StateName :Mizoram
+TIN :15
+StateCode :MI
+%====================================
+SerialNumber :26
+StateName :Nagaland
+TIN :13
+StateCode :NL
+%====================================
+SerialNumber :27
+StateName :Odisha
+TIN :21
+StateCode :OR
+%====================================
+SerialNumber :28
+StateName :Pondicherry
+TIN :34
+StateCode :PY
+%====================================
+SerialNumber :29
+StateName :Punjab
+TIN :03
+StateCode :PB
+%====================================
+SerialNumber :30
+StateName :Rajasthan
+TIN :08
+StateCode :RJ
+%====================================
+SerialNumber :31
+StateName :Sikkim
+TIN :11
+StateCode :SK
+%====================================
+SerialNumber :32
+StateName :Tamil Nadu
+TIN :33
+StateCode :TN
+%====================================
+SerialNumber :33
+StateName :Telangana
+TIN :36
+StateCode :TS
+%====================================
+SerialNumber :34
+StateName :Tripura
+TIN :16
+StateCode :TR
+%====================================
+SerialNumber :35
+StateName :Uttar Pradesh
+TIN :09
+StateCode :UP
+%====================================
+SerialNumber :36
+StateName :Uttarakhand
+TIN :05
+StateCode :UT
+%====================================
+SerialNumber :37
+StateName :West Bengal
+TIN :19
+StateCode :WB
+%====================================
