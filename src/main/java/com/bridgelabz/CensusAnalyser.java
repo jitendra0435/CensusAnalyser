@@ -32,7 +32,7 @@ public class CensusAnalyser {
         } catch (NoSuchFileException e) {
             throw new CSVFileException("NO_SUCH_FILE", CSVFileException.ExceptionType.NO_SUCH_FILE,e.getMessage());
         } catch (RuntimeException e) {
-            throw new CSVFileException("Incorrect File Type", CSVFileException.ExceptionType.NO_SUCH_TYPE, e.getMessage());
+            throw new CSVFileException("Runtime Error", CSVFileException.ExceptionType.BINDING_ERROR, e.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
         }

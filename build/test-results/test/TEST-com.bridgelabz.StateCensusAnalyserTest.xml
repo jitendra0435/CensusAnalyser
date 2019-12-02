@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.StateCensusAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-02T04:08:49" hostname="admin1-desktop" time="0.082">
+<testsuite name="com.bridgelabz.StateCensusAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-02T04:40:02" hostname="admin1-desktop" time="38.381">
   <properties/>
-  <testcase name="givenMethod_FoundInCorrectFileType_ThrowsException" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.082"/>
+  <testcase name="givenMethod_FoundIncCorrectHeader_ThrowsException" classname="com.bridgelabz.StateCensusAnalyserTest" time="38.381"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
