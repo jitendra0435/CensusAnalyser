@@ -29,9 +29,9 @@ public class CensusAnalyser {
             }
 
         } catch (NoSuchFileException e) {
-            throw new CSVFileException("NO_SUCH_FILE", CSVFileException.ExceptionType.NO_SUCH_FILE,e.getMessage());
+            throw new CSVFileException("NO_SUCH_FILE", CSVFileException.ExceptionType.NO_SUCH_FILE);
         } catch (RuntimeException e) {
-            throw new CSVFileException("Runtime Error", CSVFileException.ExceptionType.BINDING_ERROR, e.getMessage());
+            throw new CSVFileException("Runtime Error", CSVFileException.ExceptionType.BINDING_ERROR);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -54,7 +54,9 @@ public class CensusAnalyser {
                 CSVindianStates csvStates = statesIterator.next();
             }
         } catch (NoSuchFileException e) {
-            throw new CSVFileException("NO_SUCH_FILE", CSVFileException.ExceptionType.NO_SUCH_FILE,e.getMessage());
+            throw new CSVFileException("NO_SUCH_FILE", CSVFileException.ExceptionType.NO_SUCH_FILE);
+        }catch (RuntimeException e) {
+            throw new CSVFileException("Runtime Error", CSVFileException.ExceptionType.BINDING_ERROR);
         } catch (IOException e) {
             e.printStackTrace();
         }
