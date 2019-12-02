@@ -38,7 +38,7 @@ public class CensusAnalyser {
         return count;
     }
 
-    public int checkRecord(String CSV_DATA_PATH) {
+    public int checkRecord(String CSV_DATA_PATH) throws CSVFileException {
         int count = 0;
         try (
                 Reader reader = Files.newBufferedReader(Paths.get(CSV_DATA_PATH));
@@ -53,6 +53,8 @@ public class CensusAnalyser {
                 count++;
                 CSVindianStates csvStates = statesIterator.next();
             }
+        } catch (NoSuchFileException e) {
+            throw new CSVFileException("NO_SUCH_FILE", CSVFileException.ExceptionType.NO_SUCH_FILE,e.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
         }

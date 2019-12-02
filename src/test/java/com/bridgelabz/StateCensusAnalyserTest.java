@@ -9,6 +9,8 @@ public class StateCensusAnalyserTest {
     CensusAnalyser statesCensusAnalyzer = new CensusAnalyser();
     private static String SAMPLE_CSV_FILE_PATH="/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCode.csv";
     private  static String STATE_CENSUS_DATA_FILE_PATH="/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCensusData.csv";
+
+    private static String STATE_CENSUS_DATA_DUMMY="/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCensusData123.csv";
     @Test
     public void givenMethod_CheckNumberOfRecordesMatchesIfmatches_ShouldReturnTrue() {
         try {
@@ -54,8 +56,17 @@ public class StateCensusAnalyserTest {
         }
     }
     @Test
-    public void givenMethod_checkNumberOfRecordsMatchesOrNot(){
+    public void givenMethod_checkNumberOfRecordsMatchesOrNot() throws CSVFileException {
             int getRecords=statesCensusAnalyzer.checkRecord(STATE_CENSUS_DATA_FILE_PATH);
             Assert.assertEquals(29,getRecords);
+    }
+    @Test
+    public void givenMethod_FoundInCorrectFileName_ThrowsException(){
+        try {
+            int getRecords = statesCensusAnalyzer.checkRecord(STATE_CENSUS_DATA_DUMMY);
+            Assert.assertEquals(29, getRecords);
+        }catch (CSVFileException e){
+            Assert.assertEquals(CSVFileException.ExceptionType.NO_SUCH_FILE,e.type);
+        }
     }
  }
