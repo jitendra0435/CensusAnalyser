@@ -8,7 +8,6 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
-import java.util.InputMismatchException;
 import java.util.Iterator;
 
 public class CensusAnalyser {
@@ -39,4 +38,24 @@ public class CensusAnalyser {
         return count;
     }
 
+    public int checkRecord(String CSV_DATA_PATH) {
+        int count = 0;
+        try (
+                Reader reader = Files.newBufferedReader(Paths.get(CSV_DATA_PATH));
+        ) {
+            CsvToBean<CSVindianStates> csvToBean = new CsvToBeanBuilder(reader)
+                    .withType(CSVindianStates.class)
+                    .withIgnoreLeadingWhiteSpace(true)
+                    .build();
+
+            Iterator<CSVindianStates> statesIterator = csvToBean.iterator();
+            while (statesIterator.hasNext()) {
+                count++;
+                CSVindianStates csvStates = statesIterator.next();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
 }
