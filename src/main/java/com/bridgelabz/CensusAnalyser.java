@@ -2,7 +2,6 @@ package com.bridgelabz;
 
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
-
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -62,4 +61,6 @@ public class CensusAnalyser {
         }
         return count;
     }
+
+
 }

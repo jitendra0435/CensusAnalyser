@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.StateCensusAnalyserTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2019-12-02T08:02:05" hostname="admin1-desktop" time="29.905">
+<testsuite name="com.bridgelabz.StateCensusAnalyserTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2019-12-02T10:36:22" hostname="admin1-desktop" time="0.146">
   <properties/>
-  <testcase name="givenMethod_FoundInCorrectHeaderInFile_ThrowsException" classname="com.bridgelabz.StateCensusAnalyserTest" time="29.905">
-    <skipped/>
-  </testcase>
+  <testcase name="givenMethod_checkNumberOfRecordsMatchesOrNot" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.118"/>
+  <testcase name="givenMethod_FoundInCorrectDelimeter_ThrowsException" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.004"/>
+  <testcase name="givenMethod_FoundIncCorrectHeader_ThrowsException" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.002"/>
+  <testcase name="givenMethode_FoundIncorrectFileName_ThrowsException" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.001"/>
+  <testcase name="givenMethod_IfFoundInCorrectFileType_ThrowsException" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.001"/>
+  <testcase name="givenMethod_FoundInCorrectDelimeterInFile_ThrowsException" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.013"/>
+  <testcase name="givenMethod_CheckNumberOfRecordesMatchesIfmatches_ShouldReturnTrue" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.001"/>
+  <testcase name="givenMethod_FoundInCorrectHeaderInFile_ThrowsException" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.0"/>
+  <testcase name="givenMethod_FoundInCorrectFileName_ThrowsException" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.0"/>
+  <testcase name="givenMethod_FoundInCorrectFileType_ThrowsException" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
