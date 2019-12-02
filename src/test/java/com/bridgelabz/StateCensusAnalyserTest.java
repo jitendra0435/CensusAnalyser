@@ -10,7 +10,7 @@ public class StateCensusAnalyserTest {
     private static String SAMPLE_CSV_FILE_PATH="/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCode.csv";
     private  static String STATE_CENSUS_DATA_FILE_PATH="/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCensusData.csv";
 
-    private static String STATE_CENSUS_DATA_DUMMY="/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCensusData.csv";
+    private static String STATE_CENSUS_DATA_DUMMY="/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCensusDataDummy.csv";
     @Test
     public void givenMethod_CheckNumberOfRecordesMatchesIfmatches_ShouldReturnTrue() {
         try {
@@ -79,6 +79,14 @@ public class StateCensusAnalyserTest {
     }
     @Test
     public void givenMethod_FoundInCorrectDelimeterInFile_ThrowsException(){
+        try{
+            statesCensusAnalyzer.checkRecord(STATE_CENSUS_DATA_DUMMY);
+        }catch (CSVFileException e){
+            Assert.assertEquals(CSVFileException.ExceptionType.BINDING_ERROR,e.type);
+        }
+    }
+    @Test
+    public void givenMethod_FoundInCorrectHeaderInFile_ThrowsException(){
         try{
             statesCensusAnalyzer.checkRecord(STATE_CENSUS_DATA_DUMMY);
         }catch (CSVFileException e){
