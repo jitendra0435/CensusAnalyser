@@ -10,7 +10,7 @@ public class CSVStates {
     String StateName;
 
     @CsvBindByName
-    String TIN;
+    int TIN;
 
     @CsvBindByName
     String StateCode;
@@ -31,11 +31,11 @@ public class CSVStates {
         StateName = stateName;
     }
 
-    public String getTIN() {
+    public int getTIN() {
         return TIN;
     }
 
-    public void setTIN(String TIN) {
+    public void setTIN(int TIN) {
         this.TIN = TIN;
     }
 
