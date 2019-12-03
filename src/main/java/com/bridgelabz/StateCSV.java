@@ -2,17 +2,17 @@ package com.bridgelabz;
 
 import com.opencsv.bean.CsvBindByName;
 
-public class CSVStates {
-    @CsvBindByName
+public class StateCSV {
+    @CsvBindByName(column = "SrNo",required = true)
     int SrNo;
 
-    @CsvBindByName
+    @CsvBindByName(column = "StateName",required = true)
     String StateName;
 
-    @CsvBindByName
+    @CsvBindByName(column = "TIN",required = true)
     int TIN;
 
-    @CsvBindByName
+    @CsvBindByName(column = "StateCode",required = true)
     String StateCode;
 
     public int getSrNo() {
