@@ -17,7 +17,7 @@ import java.util.List;
 public class CensusAnalyser {
 
     private static String SAMPLE_CSV_FILE_PATH ="/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCode.JSON";
-
+    private static String SAMPLE_CSV_POPULATION="/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/PopulationSample.JSON";
     public int checkRecordStateCensusCSV(String SAMPLE_CSV_FILE_PATH) throws CSVFileException, IOException {
         int count = 0;
         try (
@@ -36,7 +36,9 @@ public class CensusAnalyser {
                 StateCensusCSV csvStates = statesIterator.next();
                 StateData.add(csvStates);
             }
+
             sortingStateByName(StateData);
+            sortThisListBasedOnStatePopulation(StateData);
             writeIntoJSON(StateData);
 
         } catch (NoSuchFileException e) {
@@ -52,14 +54,20 @@ public class CensusAnalyser {
     private static void sortingStateByName(List<StateCensusCSV> list) {
         Comparator<StateCensusCSV> data = Comparator.comparing(StateCensusCSV::getState);
         list.sort(data);
-        System.out.println(list.toString());
+       System.out.println(list.toString());
     }
 
     private static void writeIntoJSON(List<StateCensusCSV> list) throws IOException {
         Gson gson = new Gson();
         String json = gson.toJson(list);
-        FileWriter writer = new FileWriter(SAMPLE_CSV_FILE_PATH);
+        FileWriter writer = new FileWriter(SAMPLE_CSV_POPULATION);
         writer.write(json);
         writer.close();
     }
+
+    private static void sortThisListBasedOnStatePopulation(List<StateCensusCSV> list) {
+        Comparator<StateCensusCSV> data = (s1, s2) -> (s2.getPopulation())- (s1.getPopulation());
+        list.sort(data);
+    }
+
 }
