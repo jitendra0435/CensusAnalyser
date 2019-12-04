@@ -18,6 +18,7 @@ public class CensusAnalyser {
 
     private static String SAMPLE_CSV_FILE_PATH ="/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCode.JSON";
     private static String SAMPLE_CSV_POPULATION="/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/PopulationSample.JSON";
+    private static String SAMPLE_CSV_DENSITY="/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/PopulationDensity.JSON";
     public int checkRecordStateCensusCSV(String SAMPLE_CSV_FILE_PATH) throws CSVFileException, IOException {
         int count = 0;
         try (
@@ -39,6 +40,7 @@ public class CensusAnalyser {
 
             sortingStateByName(StateData);
             sortThisListBasedOnStatePopulation(StateData);
+            sortThisOnBasisOf_DensityPopulation(StateData);
             writeIntoJSON(StateData);
 
         } catch (NoSuchFileException e) {
@@ -60,13 +62,18 @@ public class CensusAnalyser {
     private static void writeIntoJSON(List<StateCensusCSV> list) throws IOException {
         Gson gson = new Gson();
         String json = gson.toJson(list);
-        FileWriter writer = new FileWriter(SAMPLE_CSV_POPULATION);
+        FileWriter writer = new FileWriter(SAMPLE_CSV_DENSITY);
         writer.write(json);
         writer.close();
     }
 
     private static void sortThisListBasedOnStatePopulation(List<StateCensusCSV> list) {
         Comparator<StateCensusCSV> data = (s1, s2) -> (s2.getPopulation())- (s1.getPopulation());
+        list.sort(data);
+    }
+
+    private static void sortThisOnBasisOf_DensityPopulation(List<StateCensusCSV> list){
+        Comparator<StateCensusCSV> data = (s1,s2) ->(s2.getDensityPerSqKm())-(s1.getDensityPerSqKm());
         list.sort(data);
     }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.StateCensusAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-03T14:35:14" hostname="admin1-desktop" time="0.16">
+<testsuite name="com.bridgelabz.StateCensusAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-04T04:14:09" hostname="admin1-desktop" time="0.213">
   <properties/>
-  <testcase name="givenMethod_ForSortTheCSVAndWriteIntoJson" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.16"/>
+  <testcase name="givenMethod_ForSortTheCSVAndWriteIntoJson" classname="com.bridgelabz.StateCensusAnalyserTest" time="0.213"/>
   <system-out><![CDATA[[com.bridgelabz.StateCensusCSV@4cdcc07, com.bridgelabz.StateCensusCSV@6b6da974, com.bridgelabz.StateCensusCSV@3c83e0d8, com.bridgelabz.StateCensusCSV@71f3b961, com.bridgelabz.StateCensusCSV@1b34feac, com.bridgelabz.StateCensusCSV@1d14c2b7, com.bridgelabz.StateCensusCSV@3eb274ed, com.bridgelabz.StateCensusCSV@52e6eaeb, com.bridgelabz.StateCensusCSV@6e1baf85, com.bridgelabz.StateCensusCSV@5521c98b, com.bridgelabz.StateCensusCSV@7819dade, com.bridgelabz.StateCensusCSV@1d4dc684, com.bridgelabz.StateCensusCSV@2e19252f, com.bridgelabz.StateCensusCSV@75afdcf6, com.bridgelabz.StateCensusCSV@435627b7, com.bridgelabz.StateCensusCSV@305ca0bf, com.bridgelabz.StateCensusCSV@578bdbc6, com.bridgelabz.StateCensusCSV@5c48f5ad, com.bridgelabz.StateCensusCSV@2e511a0c, com.bridgelabz.StateCensusCSV@7b5d0e21, com.bridgelabz.StateCensusCSV@7201af67, com.bridgelabz.StateCensusCSV@697fc917, com.bridgelabz.StateCensusCSV@4fd83f4e, com.bridgelabz.StateCensusCSV@5ce71c92, com.bridgelabz.StateCensusCSV@2362fafe, com.bridgelabz.StateCensusCSV@34c2a8f4, com.bridgelabz.StateCensusCSV@3a6ec36d, com.bridgelabz.StateCensusCSV@5e095b3e, com.bridgelabz.StateCensusCSV@6a08ff0b]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
