@@ -13,14 +13,14 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class CensusAnalyser<T extends Comparable<T>> {
+     String sortByState = "/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCode.JSON";
+     String sortByPopulation = "/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/PopulationSample.JSON";
+     String sortByDensity = "/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/PopulationDensity.JSON";
+     String sortByArea = "/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/SortByArea.JSON";
 
-    private static String sortByState = "/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/StateCode.JSON";
-    private static String sortByPopulation = "/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/PopulationSample.JSON";
-    private static String sortByDensity = "/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/PopulationDensity.JSON";
-    private static String sortByArea = "/home/admin1/Desktop/CensusAnalyserProblem/src/test/resources/SortByArea.JSON";
-
-    public int checkRecordStateCensusCSV(String SAMPLE_CSV_FILE_PATH) throws CSVFileException, IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
-        int Recordcount = 0;
+    public  int checkRecordStateCensusCSV(String SAMPLE_CSV_FILE_PATH) throws StateCensusAnalyserException{
+        int recordCount = 0;
+        List<StateCensusCSV> stateData = new ArrayList<>();
         try (
                 Reader reader = Files.newBufferedReader(Paths.get(SAMPLE_CSV_FILE_PATH));
         ) {
@@ -29,28 +29,33 @@ public class CensusAnalyser<T extends Comparable<T>> {
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
 
-            List<StateCensusCSV> StateData = new ArrayList<>();
-
             Iterator<StateCensusCSV> statesIterator = csvToBean.iterator();
             while (statesIterator.hasNext()) {
-                Recordcount++;
+                recordCount++;
                 StateCensusCSV csvStates = statesIterator.next();
-                StateData.add(csvStates);
+                stateData.add(csvStates);
             }
-            ascendingSort(StateData, "getState", sortByState);
-            descendingSort(StateData, "getPopulation", sortByPopulation);
-            descendingSort(StateData,"getDensityPerSqKm",sortByDensity );
-            descendingSort(StateData,"getAreaInSqKm",sortByArea );
+            ascendingSort(stateData, "getState", sortByState);
+            descendingSort(stateData, "getPopulation", sortByPopulation);
+            descendingSort(stateData,"getDensityPerSqKm",sortByDensity );
+            descendingSort(stateData,"getAreaInSqKm",sortByArea );
 
-        } catch (NoSuchFileException e) {
-            throw new CSVFileException("NO_SUCH_FILE", CSVFileException.ExceptionType.NO_SUCH_FILE);
-        } catch (RuntimeException e) {
-            throw new CSVFileException("Runtime Error", CSVFileException.ExceptionType.BINDING_ERROR);
-        } catch (IOException e) {
-            e.printStackTrace();
+        }catch (NoSuchFileException e) {
+            throw new StateCensusAnalyserException("No such file present", StateCensusAnalyserException.ExceptionType.NO_SUCH_FILE);
+        }catch (RuntimeException e) {
+            throw new StateCensusAnalyserException("Runtime Error", StateCensusAnalyserException.ExceptionType.BINDING_ERROR);
+        }catch (IOException e) {
+            throw new StateCensusAnalyserException("IO Exception",StateCensusAnalyserException.ExceptionType.IO_EXCEPTION);
+        }catch (NoSuchMethodException e) {
+            throw new StateCensusAnalyserException("Method not found",StateCensusAnalyserException.ExceptionType.NO_SUCH_METHOD);
+        }catch (IllegalAccessException e) {
+            throw new StateCensusAnalyserException("Illegal access",StateCensusAnalyserException.ExceptionType.ILLEGAL_ACCESS);
+        }catch (InvocationTargetException e) {
+            throw new StateCensusAnalyserException("Invocation target error",StateCensusAnalyserException.ExceptionType.Invocation_ERROR);
         }
-        return Recordcount;
+        return recordCount;
     }
+
     private static void writeIntoJSON(List<StateCensusCSV> list,String fileName) throws IOException {
         Gson gson = new Gson();
         String json = gson.toJson(list);
@@ -58,7 +63,8 @@ public class CensusAnalyser<T extends Comparable<T>> {
         writer.write(json);
         writer.close();
     }
-    void ascendingSort(List<StateCensusCSV> list, String methodname, String fileName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException {
+
+    public void ascendingSort(List<StateCensusCSV> list, String methodname, String fileName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException {
         for (int i = 0; i < list.size() - 1; i++) {
             for (int j = 0; j < list.size() - i - 1; j++) {
                 Class cls = list.get(j).getClass();
@@ -77,7 +83,7 @@ public class CensusAnalyser<T extends Comparable<T>> {
         writeIntoJSON(list, fileName);
     }
 
-    void descendingSort(List<StateCensusCSV> list, String methodname, String fileName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException {
+    public void descendingSort(List<StateCensusCSV> list, String methodname, String fileName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException {
         for (int i = 0; i < list.size() - 1; i++) {
             for (int j = 0; j < list.size() - i - 1; j++) {
                 Class cls = list.get(j).getClass();
